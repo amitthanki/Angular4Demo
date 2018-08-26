@@ -1,0 +1,86 @@
+<div class="container">
+ <form [formGroup]="userForm">        
+ <app-list-error-message></app-list-error-message>
+ <input type="text"  formControlName="name" name="Username">
+ 
+  <input type="text" formControlName="email"><br>
+ 
+ <select>
+     <option value=''>--Select--</option>
+     <option *ngFor= "let country of Country" value={{country.LookupValue}}>
+         {{country.LookupName}}
+     </option>
+ </select>
+ <label>Date</label>
+ <input type="date" formControlName="Shopping_date"><br>
+ <input type="button" value="Save" name="Save" (click)="saveToDB(userForm)">
+ {{complexData}}
+ {{arrayComplex}}
+  <div class ="subheader">
+     <p>Search</p>
+ </div>
+ <div *ngIf ="customer?.length>0"> 
+ <div class="table-responsive">
+        <table class="table table-bordered table-striped" *ngIf ="customer?.length>0">
+      <thead>
+          <tr>
+              <th>id</th>
+              <th>name</th>
+              <th>name</th>
+              <th>name</th>
+              <th>name</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let user of customer | paginate: { itemsPerPage: 5, currentPage: p };">  
+              <td>{{user.Id}}</td>
+              <td>{{user.Name}}</td>
+              <td>{{user.Name}}</td>
+              <td>{{user.Name}}</td>
+              <td>{{user.Name}}</td>
+              <td>
+                  <button title="Edit" class="btn btn-primary">Edit</button>
+              </td>
+          </tr>
+      </tbody>      
+  </table>    
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+ </div>
+</div>
+<div *ngIf ="objArrayObj?.length>0"> 
+    <div class="table-responsive">
+           <table class="table table-bordered table-striped" *ngIf ="objArrayObj?.length>0">
+         <thead>
+             <tr>
+                 <th>id</th>
+                 <th>name</th>
+                 <th>abc</th>
+                 <th>Action</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr *ngFor="let user of objArrayObj | paginate: { itemsPerPage: 5, currentPage: p };"
+                [ngStyle]="{'background-color':user.abc>5?'green':'red'}">
+                 
+                 <td>{{user.Name}}</td>
+                 <td>{{user.Phone}}</td>
+                 <td  [style.background-color]="user.abc>5?'green':'red'">{{user.abc}}</td>
+                 <td>{{user.abc}}</td>
+                 <td>
+                     <button title="Edit" class="btn btn-primary">Edit</button>
+                 </td>
+                
+             </tr>
+         </tbody>      
+     </table>    
+       <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+   </div>
+ <ng-template #NoRecordFound>
+     <div class="noRecordFound ">
+         <h4>No Record Found</h4>
+     </div>
+ </ng-template>
+</form>
+</div>
