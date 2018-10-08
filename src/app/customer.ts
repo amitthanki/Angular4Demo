@@ -12,7 +12,8 @@ export class arrObj {
    
     Name : string = "";
     Phone: string = "";
-     abc: string = "";
+    abc: string = "";
+    
     
    
 }

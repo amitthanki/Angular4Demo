@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule,NO_ERRORS_SCHEMA } from '@angular/core';
 import {AgGridModule} from "ag-grid-angular";
 import {RouterModule} from '@angular/router';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule,FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import { AppComponent } from './app.component';
@@ -31,7 +31,7 @@ import {ListErrorMessageComponent} from '../app/list-error-message/list-error-me
     
   ],
   imports: [
-    BrowserModule,ReactiveFormsModule,RouterModule,HttpModule,TableModule,NgxPaginationModule,AgGridModule.withComponents([]),TableModule
+    BrowserModule,FormsModule, ReactiveFormsModule,RouterModule,HttpModule,TableModule,NgxPaginationModule,AgGridModule.withComponents([]),TableModule
   ],
   providers: [DbService,ValidationService],
   schemas: [NO_ERRORS_SCHEMA],

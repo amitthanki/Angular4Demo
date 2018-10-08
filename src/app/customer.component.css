@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+  }
+  
 table td th {
     border: 1px solid black;  
    
@@ -21,4 +25,17 @@ table td th {
 .noRecordFound{
     border: 1px solid black;
     text-align: center;
+}
+ul li{
+    list-style-type: none;
+}
+
+.movingRecord{
+    border: 1px solid black;
+    margin: 0px;   
+    display:block;
+}
+.movingRecord li{
+cursor: pointer;
+position: relative;
 }

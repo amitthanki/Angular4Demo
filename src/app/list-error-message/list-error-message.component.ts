@@ -25,5 +25,12 @@ export class ListErrorMessageComponent implements OnInit {
         }
       })
     }
+
+    reset(formgroup: FormGroup){
+      this.errors = [];
+      formgroup.reset();
+
+
+    }
    
 }

@@ -1,19 +1,31 @@
 <div class="container">
- <form [formGroup]="userForm">        
+ <form [formGroup]="userForm"> 
  <app-list-error-message></app-list-error-message>
  <input type="text"  formControlName="name" name="Username">
  
   <input type="text" formControlName="email"><br>
  
- <select>
+ <select formControlName="country">
      <option value=''>--Select--</option>
      <option *ngFor= "let country of Country" value={{country.LookupValue}}>
          {{country.LookupName}}
      </option>
- </select>
- <label>Date</label>
+ </select><br>
+ <select multiple formControlName="country1">
+        <option *ngFor= "let country1 of Country1" value={{country1.LookupValue}}>
+            {{country1.LookupName}}
+        </option>
+    </select>
+    <input type="button" value="move" name="idmove" (click)="MoveCountry()">
+    <select multiple formControlName="country2">
+            <option *ngFor= "let country of Country2" value={{country.LookupValue}}>
+                {{country.LookupName}}
+            </option>
+        </select> 
+  <label>Date</label>
  <input type="date" formControlName="Shopping_date"><br>
  <input type="button" value="Save" name="Save" (click)="saveToDB(userForm)">
+ <input type="reset" value="Reset" name ="reset" (click)="reset()">
  {{complexData}}
  {{arrayComplex}}
   <div class ="subheader">
@@ -40,7 +52,8 @@
               <td>{{user.Name}}</td>
               <td>{{user.Name}}</td>
               <td>
-                  <button title="Edit" class="btn btn-primary">Edit</button>
+                <!-- <button title="Edit" class="btn btn-primary">Edit</button>  -->
+                
               </td>
           </tr>
       </tbody>      
@@ -68,9 +81,8 @@
                  <td  [style.background-color]="user.abc>5?'green':'red'">{{user.abc}}</td>
                  <td>{{user.abc}}</td>
                  <td>
-                     <button title="Edit" class="btn btn-primary">Edit</button>
-                 </td>
-                
+                    <input type="checkbox" class="form-control" value="{{user.Name}}" formControlName="selected" (click)="selectID(user.Name,$event)">
+                 </td>                
              </tr>
          </tbody>      
      </table>    

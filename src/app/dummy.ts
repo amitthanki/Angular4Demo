@@ -75,12 +75,12 @@ export class dummy{
 ]};
 getArray(){
 	return [
-	{"Name": "Alfonso", "Phone": "(01745) 545182", "abc": "10","CreatedDate":"01/01/2000"},
-	{"Name": "Lars", "Phone": "0845 46 49", "abc": "4","CreatedDate":"01/05/2000"},
-	{"Name": "David", "Phone": "076 5311 6696", "abc": "6","CreatedDate":"01/01/2008"},
-	{"Name": "Abel", "Phone": "(0114) 996 1979", "abc": "6","CreatedDate":"11/01/2000"},
-	{"Name": "Octavius", "Phone": "0800 922 0845", "abc": "3","CreatedDate":"01/01/1998"},
-	{"Name": "Michael", "Phone": "0845 46 43", "abc": "10","CreatedDate":"01/10/2000"},
+	{"Name": "Alfonso", "Phone": "(01745) 545182", "abc": "10"},
+	{"Name": "Lars", "Phone": "0845 46 49", "abc": "4"},
+	{"Name": "David", "Phone": "076 5311 6696", "abc": "6"},
+	{"Name": "Abel", "Phone": "(0114) 996 1979", "abc": "6"},
+	{"Name": "Octavius", "Phone": "0800 922 0845", "abc": "3"},
+	{"Name": "Michael", "Phone": "0845 46 43", "abc": "10"},
 	{"Name": "Cole", "Phone": "(024) 2984 4176", "abc": "1"},
 	{"Name": "Clark", "Phone": "0928 416 1117", "abc": "8"},
 	{"Name": "Denton", "Phone": "055 0654 4461", "abc": "2"},
